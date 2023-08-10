@@ -15,3 +15,14 @@ if (close){
          nav.classList.remove('active')
     })
 }
+
+
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  fetch("http://localhost:5000/api/product/", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));

@@ -11,9 +11,11 @@ const cookieParser =require('cookie-parser');
 const { notFound, errorHnadler } = require('./middleware/errorHandler');
 const morgan = require('morgan')
 const app = express();
+var cors = require('cors')
 
 connectDb();
 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cookieParser())
